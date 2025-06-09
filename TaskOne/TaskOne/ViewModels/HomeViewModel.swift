@@ -8,5 +8,7 @@
 import Foundation
 
 class HomeViewModel {
-
+    var viewModel = HomeViewModel()
+    
+    
 }
