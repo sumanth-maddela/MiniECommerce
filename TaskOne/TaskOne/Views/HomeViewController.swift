@@ -30,10 +30,6 @@ class HomeViewController: UIViewController {
         let request = URL(string: self.urlString)
         view.backgroundColor = Constants.Colors.background
         loaderView?.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
-
         collectionView.backgroundColor = Constants.Colors.background
         //ADD LOADER
         showLoader()
@@ -111,7 +107,7 @@ extension HomeViewController : UICollectionViewDataSource , UICollectionViewDele
         let spacing: CGFloat = 8
         let totalSpacing = spacing * 3  // left + right + middle
         let width = (collectionView.bounds.width - totalSpacing) / 2
-        return CGSize(width: width, height: UICollectionViewFlowLayout.automaticSize.height)
+        return CGSize(width: width, height: width + 40)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
